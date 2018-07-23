@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var bord: UIView!
+    @IBOutlet weak var button: UIButton!
     var panel = PanelController()
     
     var timer = Timer()
@@ -30,13 +30,14 @@ class ViewController: UIViewController {
     @IBAction func Start(_ sender: Any) {
         if timerFlag {
             timer.invalidate();
-            timerFlag = false
         } else {
             timer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true, block: { (timer) in
             self.panel.update()
         })
-            timerFlag = true
+            
         }
+        button.setTitle(timerFlag ?"Start" : "Stop", for:.normal)
+        timerFlag = !timerFlag
     }
     
 }
