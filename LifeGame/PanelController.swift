@@ -20,7 +20,7 @@ class PanelController{
         for x in 0...35 {
             for y in 0...35 {
                 let TestView = Panel()
-                TestView.Initialize(frame: CGRect.init(x: 10 + x * 11, y: 156 + y * 11, width: 10, height: 10),x:x,y:y)
+                TestView.Initialize(frame: CGRect.init(x: 10 + x * 11, y: 50 + y * 11, width: 10, height: 10),x:x,y:y)
                 let bgColor = UIColor.white
                 TestView.backgroundColor = bgColor
                 view.addSubview(TestView)

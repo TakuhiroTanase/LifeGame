@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OjD-rO-8nD">
-                                <rect key="frame" x="157" y="617" width="61" height="30"/>
+                                <rect key="frame" x="298" y="617" width="61" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -28,12 +28,34 @@
                                     <action selector="Start:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BpN-F8-fk2"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pW2-a0-V1W">
+                                <rect key="frame" x="16" y="529" width="220" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="IO3-cW-wOi"/>
+                                    <constraint firstAttribute="width" constant="220" id="STk-mg-hcD"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4y0-dh-v2X">
+                                <rect key="frame" x="167" y="313" width="20" height="20"/>
+                                <color key="backgroundColor" red="0.25882352939999997" green="0.50980392159999999" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="8i9-VQ-eDf"/>
+                                    <constraint firstAttribute="height" constant="20" id="Kgm-Ee-q7o"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pW2-a0-V1W" secondAttribute="bottom" constant="10" id="55L-hw-4Qc"/>
+                            <constraint firstItem="pW2-a0-V1W" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="XYY-7w-QDj"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="button" destination="OjD-rO-8nD" id="ZI8-Mn-c5f"/>
+                        <outlet property="mousePad" destination="pW2-a0-V1W" id="6c7-SQ-ndT"/>
+                        <outlet property="mousePointer" destination="4y0-dh-v2X" id="Vki-n1-TUX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

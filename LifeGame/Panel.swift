@@ -27,8 +27,7 @@ class Panel: UIButton {
 
     }
     @objc func buttonEvent(_ sender: UIButton) {
-        saveLife = !saveLife
-        lifeCheck()
+        Button()
     }
     func update(panels:[[Panel]])
     {
@@ -61,6 +60,11 @@ class Panel: UIButton {
         }
         saveLife = life ? (count == 2 || count == 3) : count == 3
         
+    }
+    func Button()
+    {
+        saveLife = !saveLife
+        lifeCheck()
     }
     func lifeCheck()
     {
