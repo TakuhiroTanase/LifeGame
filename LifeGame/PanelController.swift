@@ -17,10 +17,11 @@ class PanelController{
     }
     
     func Initialize(view:UIView) {
+        
         for x in 0...35 {
             for y in 0...35 {
                 let TestView = Panel()
-                TestView.Initialize(frame: CGRect.init(x: 10 + x * 11, y: 50 + y * 11, width: 10, height: 10),x:x,y:y)
+                TestView.Initialize(frame: CGRect.init(x:5 + x * 10, y: 50 + y * 10, width: 9, height: 9),x:x,y:y)
                 let bgColor = UIColor.white
                 TestView.backgroundColor = bgColor
                 view.addSubview(TestView)
@@ -141,6 +142,21 @@ class PanelController{
         for x in panel {
             for y in x {
                 y.lifeCheck()
+            }
+        }
+    }
+    func posCheck( v:CGPoint)
+    {
+//        let minX:Int = Int(v.x - 20) / 10
+//        let minY:Int = Int(v.y - 70) / 10
+//        for x in minX...minX + 4 {
+//            if x >= 36||x<0{continue}
+//            for y in minY...minY + 4{
+//                if y>=36||y<0{continue}
+        
+        for x in panel {
+            for y in x {
+                y.PosCheck(v: v)
             }
         }
     }

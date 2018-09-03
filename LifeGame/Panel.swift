@@ -15,7 +15,7 @@ class Panel: UIButton {
     var saveLife = false
     var x = 0
     var y = 0
-    
+    var vector = CGPoint()
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -23,11 +23,13 @@ class Panel: UIButton {
         self.frame = frame
         self.x = x
         self.y = y
+        vector.x = self.layer.position.x
+        vector.y = self.layer.position.y
         self.addTarget(self, action: #selector(buttonEvent(_:)), for: UIControlEvents.touchUpInside)
 
     }
     @objc func buttonEvent(_ sender: UIButton) {
-        Button()
+ //       Button()
     }
     func update(panels:[[Panel]])
     {
@@ -74,5 +76,13 @@ class Panel: UIButton {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+    func PosCheck(v:CGPoint){
+       var minPos = CGPoint(x: vector.x-5, y:  vector.y-5)
+       var maxPos = CGPoint(x: vector.x+5, y:  vector.y+5)
+      //  if CGPoint().Inside(v,minPos,maxPos){
+            if vector.Distance(v) <= 7{
+                Button()
+      //      }
+        }
+    }
 }

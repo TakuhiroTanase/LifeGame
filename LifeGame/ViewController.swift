@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         panel.Initialize(view: self.view)
         self.view.bringSubview(toFront: mousePointer)
-        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(ViewController.tapDouble(sender:)))
+        let doubleTap = UITapGestureRecognizer(target: mousePad, action: #selector(ViewController.tapDouble(sender:)))
         doubleTap.numberOfTapsRequired = 2
         view.addGestureRecognizer(doubleTap)
     }
@@ -57,7 +57,10 @@ class ViewController: UIViewController {
         }
     }
     @objc func tapDouble(sender: UITapGestureRecognizer!) {
-        Swift.print( mousePointer.layer.position)
+        var mousePos = mousePointer.layer.position
+        mousePos.x -= 10
+        mousePos.y -= 10
+        panel.posCheck(v: mousePos)
     }
     @IBAction func Start(_ sender: Any) {
         if timerFlag {
@@ -70,6 +73,10 @@ class ViewController: UIViewController {
         }
         button.setTitle(timerFlag ?"Start" : "Stop", for:.normal)
         timerFlag = !timerFlag
+    }
+    @IBAction func Reset(_ sender: Any) {
+        panel.Initialize(view: view)
+        view.bringSubview(toFront: mousePointer)
     }
     
 }
