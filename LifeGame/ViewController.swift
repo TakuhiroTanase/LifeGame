@@ -23,9 +23,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         panel.Initialize(view: self.view)
         self.view.bringSubview(toFront: mousePointer)
-        let doubleTap = UITapGestureRecognizer(target: mousePad, action: #selector(ViewController.tapDouble(sender:)))
+        let doubleTap = UITapGestureRecognizer(target:self, action: #selector(ViewController.tapDouble(sender:)))
         doubleTap.numberOfTapsRequired = 2
-        view.addGestureRecognizer(doubleTap)
+        mousePad.addGestureRecognizer(doubleTap)
     }
 
     override func didReceiveMemoryWarning() {
